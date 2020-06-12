@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
     redirect "/users/#{user.id}/index"
   else
-    
+    @error = "Incorrect email or password*"
+    erb :'users/login'
   end
   
   post '/logout' do
