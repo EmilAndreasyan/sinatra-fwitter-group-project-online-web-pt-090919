@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     if params[:user][:email].empty? || params[:user][:password].empty?
       @error = "Email and password fields cannot be blank*"
       erb :'users/login' 
-    
+    elsif user && user.authenticate()
   end
   
   post '/logout' do
