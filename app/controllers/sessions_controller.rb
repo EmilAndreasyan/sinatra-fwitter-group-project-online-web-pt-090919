@@ -8,6 +8,8 @@ class SessionsController < ApplicationController
     user.save
     session[:user_id] = user.id
     redirect "/users/#{user.id}/index"
+  else
+    
   end
   
   post '/logout' do
