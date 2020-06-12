@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   get '/login' do 
-    erb: '/users/login'
+    user = User.find
   end
   
   post '/logout' do
