@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
       erb :'users/login' 
     elsif user && user.authenticate(params[:user][:password])
     user.save
-    session[:user_d]
+    session[:user_id] = user.id
   end
   
   post '/logout' do
